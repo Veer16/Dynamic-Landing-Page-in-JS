@@ -19,11 +19,17 @@ function showTime() {
     hour = hour % 12 || 12;
 
     //Output the time
-    time.innerHTML = `${hour}<span>:</span>${min}<span>:</span>${sec}`;
+    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
 
     // call this function every second
     setTimeout(showTime, 1000);
 
+}
+
+// Add zero
+
+function addZero(n) {
+    return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 //Run 
 showTime();
